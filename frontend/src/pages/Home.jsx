@@ -6,7 +6,7 @@ import { models, disclaimer } from "../data/models.js";
 export default function Home() {
   return (
     <main id="main-content">
-      <section className="glass-panel container" style={{ margin: "16px", padding: "48px 32px", display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "32px", alignItems: "center" }}>
+      <section className="glass-panel container" style={{ margin: "16px auto", padding: "48px 32px", display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "32px", alignItems: "center" }}>
         <div>
           <h1>Entiende los modelos de IA más potentes, sin humo ni cifras infladas</h1>
           <p>
