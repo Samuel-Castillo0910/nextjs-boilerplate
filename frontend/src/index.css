@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --bg-base: #0b1020;
+  --bg-elevated: #10152b;
+  --glass-fill: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --neu-light: #1e2545;
+  --neu-shadow: #04060f;
+  --text-primary: #edeffc;
+  --text-muted: #a3a9c9;
+  --accent-a: #5ee7df;
+  --accent-b: #7c6ff2;
+  --focus-ring: #9fe8ff;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 64px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 15% 0%, #141a37 0%, var(--bg-base) 55%);
+  color: var(--text-primary);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  line-height: 1.2;
+  margin: 0 0 var(--space-2);
+}
+
+p {
+  color: var(--text-muted);
+  max-width: 68ch;
+  margin: 0 0 var(--space-2);
+}
+
+a {
+  color: var(--accent-a);
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--accent-b);
+  color: #06081a;
+  padding: 10px 16px;
+  border-radius: 0 0 8px 0;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+.glass-panel {
+  background: var(--glass-fill);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.neu-surface {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-md);
+  box-shadow: 8px 8px 18px var(--neu-shadow), -8px -8px 18px var(--neu-light);
+}
+
+.neu-button {
+  background: var(--bg-elevated);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 14px 26px;
+  cursor: pointer;
+  box-shadow: 6px 6px 14px var(--neu-shadow), -6px -6px 14px var(--neu-light);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.neu-button:hover {
+  transform: translateY(-2px);
+}
+
+.neu-button:active {
+  box-shadow: inset 4px 4px 10px var(--neu-shadow), inset -4px -4px 10px var(--neu-light);
+  transform: translateY(0);
+}
+
+.neu-button.primary {
+  background: linear-gradient(135deg, var(--accent-a), var(--accent-b));
+  color: #06081a;
+  box-shadow: 0 10px 30px rgba(124, 111, 242, 0.35);
+}
+
+.neu-input {
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 12px 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  box-shadow: inset 4px 4px 10px var(--neu-shadow), inset -4px -4px 10px var(--neu-light);
+}
+
+.field-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.field-hint {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  margin-top: 4px;
+}
+
+nav a, footer a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-3);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-a);
+  background: rgba(94, 231, 223, 0.12);
+  border-radius: 999px;
+  padding: 4px 12px;
+  margin-bottom: var(--space-1);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.primary-menu {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --space-4: 28px;
+    --space-5: 40px;
+  }
+  h1 {
+    font-size: 1.9rem;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .primary-menu {
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+    position: absolute;
+    right: 16px;
+    top: 74px;
+    background: var(--bg-elevated);
+    border-radius: var(--radius-md);
+    padding: 18px 22px;
+    box-shadow: 8px 8px 18px var(--neu-shadow), -8px -8px 18px var(--neu-light);
+  }
+  .primary-menu.is-open {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .neu-button {
+    transition: none;
+  }
+}
